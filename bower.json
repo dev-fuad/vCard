@@ -1,0 +1,28 @@
+{
+  "name": "jade-scss-boilerplate",
+  "description": "This repository acts as a very simple Boilerplate for Website project using Jade & SASS.",
+  "main": "gulpfile.js",
+  "authors": [
+    "Fuad Mohammed Firoz"
+  ],
+  "license": "SEE LICENSE IN <LICENSE.md>",
+  "keywords": [
+    "jade",
+    "scss",
+    "boilerplate"
+  ],
+  "moduleType": [],
+  "homepage": "index.html",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.5"
+  }
+}

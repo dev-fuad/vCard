@@ -16,20 +16,28 @@ This repository acts as a very simple Boilerplate for Website project using Jade
 2. Git
 
     Download Git from  https://git-scm.com/downloads
+    
+3. Bower
+    
+    ```
+    $ npm install -g bower
+    ```
 
 ## Usage
 
-1: Clone repo
-```
-git clone https://to.be.added
-```
-2: Install packages
-```
-npm install
-```
-3: Start server (includes auto refreshing) and gulp watcher
-```
-npm start
-```
+1. Clone repo
+    
+    ```
+    $ git clone https://to.be.added
+    ```
+2. Install packages
+    ```
+    npm install
+    bower install
+    ```
+3. Start server (includes auto refreshing) and gulp watcher
+    ```
+    npm start
+    ```
 
 [View this Repo](http://dev-fuad.github.io/Jade-SCSS-Boilerplate)

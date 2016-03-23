@@ -28,7 +28,7 @@ This repository acts as a very simple Boilerplate for Website project using Jade
 1. Clone repo
     
     ```
-    $ git clone https://to.be.added
+    $ git clone https://github.com/dev-fuad/Jade-SCSS-Boilerplate.git
     ```
 2. Install packages
 

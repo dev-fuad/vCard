@@ -1,3 +1,14 @@
-nav
-    a(href="home") Home
-    a(href="about") About
+nav.navbar.navbar-default
+    div.container-fluid
+        div.navbar-header
+            button.navbar-toggle.collapsed(type="button" data-toggle="collapse" data-target="#navigation-menu" aria-expanded="false")
+                span.sr-only Toggle Menu
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+        div.collapse.navbar-collapse#navigation-menu
+            ul.nav.navbar-nav
+                li
+                    a(href="home") Home
+                li
+                    a(href="about.html") About

@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+    head
+        base(href="/")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        title Jade-SCSS Boilerplate
+        
+        link(href="img/favicon.png" rel="favicon")
+        link(href="bootstrap/css/bootstrap.min.css" rel="stylesheet")
+        link(href="styles/styles.min.css" rel="stylesheet")
+        block header
+    body
+        include ./_navigation.jade
+        
+        block content
+        
+        footer
+            Copyright &copy;2016 Fuad Mohammed Firoz
+        script(src="jquery/jquery.min.js")
+        script(src="bootstrap/js/bootstrap.min.js")
+        script(src="scripts/main.min.js")

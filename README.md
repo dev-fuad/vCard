@@ -31,11 +31,13 @@ This repository acts as a very simple Boilerplate for Website project using Jade
     $ git clone https://to.be.added
     ```
 2. Install packages
+
     ```
     npm install
     bower install
     ```
 3. Start server (includes auto refreshing) and gulp watcher
+
     ```
     npm start
     ```

@@ -84,4 +84,4 @@ gulp.task('get-jquery', function() {
 
 gulp.task('get-bower-components', ['get-bootstrap', 'get-jquery']);
 
-gulp.task('default', ['get-bower-components', 'build-css', 'build-js', 'build-html', 'watch']);
+gulp.task('default', ['get-bower-components', 'build-css', 'build-js', 'build-html', 'build-img', 'watch']);

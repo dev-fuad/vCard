@@ -1,0 +1,47 @@
+@import "./_theming.scss";
+@import "./_anim-frames.scss";
+
+.static {
+    margin: auto auto 15px auto;
+    text-align: center;
+    font-size: larger;
+}
+
+.card-skills {
+    .lang-icons {
+        width: 100%;
+        overflow-wrap: break-word;
+    }
+
+    .show {
+        & > [class^=line-] {
+            margin: 8px 0;
+            
+            @for $i from 1 through 4 {
+                &:nth-child(#{$i}) {
+                    @for $j from 1 through 8 {
+                        span:nth-child(#{$j}) {
+                            animation: {
+                                name: blip-in;
+                                duration: 300ms;
+                                delay: (150ms * $i * $j) - 300; 
+                                timing-function: ease-in-out;
+                                fill-mode: forwards;
+                            }
+                        }
+                    }
+                }
+            }
+
+            & > span {
+                margin: 8px;
+                font-size: 36pt;
+                color: $green-primary;
+            }
+        }
+    }
+    
+    .hide { 
+        display: none;
+    }
+}

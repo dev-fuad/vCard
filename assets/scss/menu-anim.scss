@@ -1,0 +1,45 @@
+@import "./_anim-frames.scss";
+
+header:hover > nav {
+    display: block;
+    perspective: 1000px;
+
+    a {
+        opacity: 0;
+        transform-origin: top left;
+
+        @for $i from 1 through 3 {
+            &:nth-child(#{$i}) {
+                animation: {
+                    name: menu-in;
+                    duration: 500ms;
+                    delay: (150ms * $i) - 300; 
+                    timing-function: ease-in-out;
+                    fill-mode: forwards;
+                }
+            }
+        }
+    }
+}
+
+header:not( :hover ) > nav
+{
+    perspective: 1000px;
+
+    a {
+        opacity: 0;
+        transform-origin: top center;
+
+        @for $i from 1 through 3 {
+            &:nth-child(#{$i}) {
+                animation: {
+                    name: menu-out;
+                    duration: 300ms;
+                    delay: (150ms * (3 - $i)) - 300; 
+                    timing-function: ease-in-out;
+                    fill-mode: forwards;
+                }
+            }
+        }
+    }
+}

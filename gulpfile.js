@@ -5,6 +5,8 @@ var assetsProd = 'src/';
 
 /* Mixed */
 var ext_replace = require('gulp-ext-replace');
+var run = require('run-sequence');
+var ignore = require('gulp-ignore');
 
 /* HTML */
 var jade = require('gulp-jade');
@@ -21,10 +23,18 @@ var jsuglify = require('gulp-uglify');
 /* Images */
 var imagemin = require('gulp-imagemin');
 
+/* Clean-up */
+var del = require('del');
+
 function handleError(error) {
     console.log(error.toString());
     this.emit('end');
 }
+
+
+gulp.task('clean', function() {
+  return del([assetsProd]);
+});
 
 gulp.task('build-css', function () {
     return gulp.src(assetsDev + 'scss/*.scss')
@@ -32,7 +42,7 @@ gulp.task('build-css', function () {
         .pipe(sass())
         .on('error', handleError)
         .pipe(autoprefixer())
-        .pipe(cssnano())
+        .pipe(cssnano({reduceIdents: false}))
         .pipe(sourcemaps.write())
         .pipe(ext_replace('.min.css'))
         .pipe(gulp.dest(assetsProd + 'styles/'));
@@ -59,29 +69,28 @@ gulp.task('build-html', function () {
     return gulp.src(assetsDev + 'jade/*.jade')
         .pipe(jade())
         .on('error', handleError)
+        .pipe(ignore.exclude('_*'))
         .pipe(gulp.dest(assetsProd));
 });
 
 gulp.task('watch', function () {
     gulp.watch(assetsDev + 'scss/**/*.scss', ['build-css']);
-    gulp.watch(assetsDev + 'scrpits/*.js', ['build-js']);
+    gulp.watch(assetsDev + 'scripts/*.js', ['build-js']);
     gulp.watch(assetsDev + 'img/*', ['build-img']);
     gulp.watch(assetsDev + 'jade/*.jade', ['build-html']);
+    gulp.watch(assetsDev + 'library/**/*.*', ['get-vendor-files']);
 });
 
-var paths = [
-    'bower_components/bootstrap/dist/*/*.min.*',
-    'bower_components/jquery/dist/jquery.min.js'
-];
+var pathLibrary = assetsDev + 'library/**/*.*';
 
-gulp.task('get-bootstrap', function() {
-    return gulp.src(paths[0]).pipe(gulp.dest(assetsProd + 'bootstrap/'));
+gulp.task('get-vendor-files', function() {
+    return gulp.src(pathLibrary).pipe(gulp.dest(assetsProd + 'library/'));
 });
 
-gulp.task('get-jquery', function() {
-    return gulp.src(paths[1]).pipe(gulp.dest(assetsProd + 'jquery/'));
+gulp.task('default', ['get-vendor-files', 'build-css', 'build-js', 'build-html', 'build-img', 'watch']);
+
+gulp.task('rebuild', function () {
+    run('clean',
+        ['get-vendor-files', 'build-js', 'build-css', 'build-img', 'build-html'],
+        'watch');
 });
-
-gulp.task('get-bower-components', ['get-bootstrap', 'get-jquery']);
-
-gulp.task('default', ['get-bower-components', 'build-css', 'build-js', 'build-html', 'build-img', 'watch']);

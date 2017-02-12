@@ -1,8 +1,78 @@
 extends _layout
 
 block header
+    link(href="styles/card.min.css"             rel="stylesheet")
+    link(href="styles/skills.min.css"           rel="stylesheet")
+    link(href="library/css/devicon.min.css"     rel="stylesheet")
+    link(href="library/css/devicons.min.css"    rel="stylesheet")
+    link(href="library/css/icomoon.css"         rel="stylesheet")
+    link(href="library/css/text-rotate.min.css" rel="stylesheet")
 
 block content
-    div.container
-        h1 Jade-SCSS Boilerplate
-        p.text-danger Welcome to Jade-SCSS Boilerplate
+    .content
+        #Card.card.show-card
+            .card-text
+                h3 Fuad Mohammed Firoz
+                h4
+                    span.rotate
+                        span iOS Developer
+                        span .NET Developer
+                        span NodeJS Developer
+                        span PHP Developer
+                        span Front-End Web Developer
+                .contact
+                    .bubble Hire Me
+                    br
+                    a.contact(href="mailto:dev.fuad@outlook.com")
+                        i.fa.fa-envelope-square  
+                        span  dev.fuad@outlook.com
+                    br
+                    a.contact(href="tel:+919950054177")
+                        i.fa.fa-phone-square  
+                        span  (+91) 9950-054 177
+                .social-media
+                    //- a(href="Github")
+                    //-     i.fa.fa-github-square.fa-2x
+                    a(href="https://www.linkedin.com/in/fuad17/")
+                        i.fa.fa-linkedin-square.fa-2x
+                    //- a(href="Degreed")
+                    //-     i.fa.fa-square.fa-2x
+            .card-image
+                .slant
+                    .slant
+                        img.img-responsive(src="../img/Me.jpg")
+
+        include ./skills.jade
+        
+        //- #About.card.hide-card
+        //-     .card-text
+        //-         h3 Fuad Mohammed Firoz
+        //-         h4
+        //-             span.rotate
+        //-                 span iOS Developer
+        //-                 span .NET Developer
+        //-                 span NodeJS Developer
+        //-                 span PHP Developer
+        //-                 span Front-End Web Developer
+        //-         .contact
+        //-             .bubble Hire Me
+        //-             br
+        //-             a.contact(href="mailto:fuad@live.in")
+        //-                 i.fa.fa-envelope-square  
+        //-                 span  dev.fuad@outlook.com
+        //-             br
+        //-             a.contact(href="tel:+919950054177")
+        //-                 i.fa.fa-phone-square  
+        //-                 span  (+91) 9950-054 177
+        //-         .social-media
+        //-             a(href="Github")
+        //-                 i.fa.fa-github-square.fa-2x
+        //-             a(href="LinkedIn")
+        //-                 i.fa.fa-linkedin-square.fa-2x
+        //-             a(href="Degreed")
+        //-                 i.fa.fa-square.fa-2x
+        //-     .card-image
+        //-         .slant
+        //-             .slant
+        //-                 img.img-responsive(src="../img/2.jpg")
+        

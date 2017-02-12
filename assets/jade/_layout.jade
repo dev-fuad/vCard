@@ -3,19 +3,22 @@ html(lang="en")
     head
         base(href="/")
         meta(name="viewport" content="width=device-width, initial-scale=1")
-        title Jade-SCSS Boilerplate
+        title vCard - Fuad
         
-        link(href="img/favicon.png" rel="icon" type="image/png")
-        link(href="bootstrap/css/bootstrap.min.css" rel="stylesheet")
-        link(href="styles/styles.min.css" rel="stylesheet")
+        link(href="img/favicon.png" rel="icon"  type="image/png")
+        link(href="styles/styles.min.css"       rel="stylesheet")
+        link(href="library/css/font-awesome.min.css" rel="stylesheet")
+        link(href="library/css/typper.css" rel="stylesheet")
         block header
     body
-        include ./_navigation.jade
+        div.background
+            div 
+        //- include ./_navigation.jade
         
         block content
         
-        footer.text-center
+        footer
             Copyright &copy;2016 Fuad Mohammed Firoz
-        script(src="jquery/jquery.min.js")
-        script(src="bootstrap/js/bootstrap.min.js")
+        script(src="library/js/jquery-2.2.4.min.js")
+        script(src="library/js/typer.js")
         script(src="scripts/main.min.js")

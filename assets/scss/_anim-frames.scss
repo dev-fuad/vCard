@@ -1,0 +1,33 @@
+
+@keyframes menu-in {
+    0% {
+        opacity: 0;
+        transform: rotate(30deg) translateX(-30px) translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(0) translateX(0)  translateY(0);
+    }
+}
+
+@keyframes menu-out {
+    100% {
+        opacity: 0;
+        transform: rotate(30deg) translateX(-30px) translateY(30px);
+    }
+    0% {
+        opacity: 1;
+        transform: rotate(0) translateX(0)  translateY(0);
+    }
+}
+
+@keyframes blip-in {
+    0% {
+        opacity: 1;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

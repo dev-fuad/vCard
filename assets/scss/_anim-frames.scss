@@ -31,3 +31,15 @@
         transform: scale(1);
     }
 }
+
+@keyframes slide {
+    0% {
+        transform: translateY(-70%);
+    }
+    95% {
+        transform: translateY(160%);
+    }
+    100% {
+        transform: translateY(-50%);
+    }
+}

@@ -1,4 +1,5 @@
 @import "./_theming.scss";
+@import "./_anim-frames.scss";
 
 .card {
     vertical-align: middle;
@@ -33,7 +34,9 @@
         
         .slant {
             transform: skew(-20deg);
-            border-left: 15px solid $green-primary;
+            padding-left: 15px;
+            background-color: $green-primary;
+            border-left: 0 solid $green-primary;
             transform-origin: top left;
             height: 100%;
             width: 150%;
@@ -48,6 +51,21 @@
                     transform-origin: top left;
                     left: -30%;
                     transform: skew(20deg);
+                }
+            }
+        }
+
+        @for $i from 1 through 4 {
+            .anim-shade:nth-child(#{$i}) {
+                position: fixed;
+                height: 200px;
+                width: 16px;
+                z-index: 999;
+                border-left: 15px solid rgba(255, 255, 255, 0.4);
+                animation: {
+                    name: slide;
+                    duration: 10s + random(20);
+                    iteration-count: infinite; 
                 }
             }
         }
